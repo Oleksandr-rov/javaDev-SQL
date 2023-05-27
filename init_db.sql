@@ -26,23 +26,3 @@ CREATE TABLE project_worker (
     FOREIGN KEY (project_id) REFERENCES project(id),
     FOREIGN KEY (worker_id) REFERENCES worker(id)
 );
-
-DROP TABLE client;
-DROP TABLE project;
-DROP TABLE project_worker;
-DROP TABLE worker;
-
-SELECT * FROM worker;
-SELECT * FROM client;
-SELECT * FROM project;
-SELECT * FROM project_worker;
-
-UPDATE workers
-SET salary = 5000
-WHERE name = 'Oleksandr';
-
-/* виведе клієнта та кількість проектів які він заказав */
-SELECT client_id, count(client_id)
-FROM project
-GROUP BY client_id;
-
